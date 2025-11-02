@@ -118,7 +118,7 @@ while True:
 
                     elif opcao_servicos =="b":
                         print("---------BUSCAR SERVIÇOS------------")
-                        buscar = input('Digite o produto que deseja buscar:')
+                        buscar = input('Digite o produto que deseja buscar:').lower().strip()
                         servicosEncontrado = 0
                         for s in servicos:
                           if buscar.lower() in s[0].lower():
