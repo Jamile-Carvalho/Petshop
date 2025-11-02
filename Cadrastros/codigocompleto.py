@@ -222,7 +222,7 @@ while True:
 
                     elif opcao_produtos =="b":
                         print("---------BUSCAR PRODUTOS------------")
-                        buscar = input('Digite o produto que deseja buscar:')
+                        buscar = input('Digite o produto que deseja buscar:').lower().strip()
                         produtoEncontrado = 0
                         for p in produtos:
                             if buscar.lower() in p[0].lower():
@@ -272,6 +272,7 @@ while True:
                         indice = int(input("Digite o indice do produto que você deseja remover: "))
 
                         produtos.remove(produtos[indice])
+                        #perguntar a Guilherme porque quando rodo o código aparece a pergunta de qual indice quero remover duas vezes
 
                     else:
                         print("Erro.Escolha uma opção válida!")
