@@ -132,8 +132,8 @@ while True:
                             print('Serviço não encontrado')
 
                     elif opcao_servicos == "c":
-                        print("---------LISTA DE SERVIÇOS------------")
-                        for s in servicos:
+                        print("---------LISTA DE SERVIÇOS------------") 
+                        for s in servicos: 
                             print(f"Serviço: {s[0]} | Descrição: {s[1]} | Horário: {s[2]} | Preço: {s[3]}")
 
                     elif opcao_servicos == "d":
@@ -151,8 +151,8 @@ while True:
                         print(f"Horário Atual: {servicos[indice][2]}")
                         print(f"Preço Atual: {servicos[indice][3]}")
 
-                        novo_nome = input("Digite o nome do novo serviço: ")
-                        nova_descricao = input("Digite a nova descrição do novo serviço:")
+                        novo_nome = input("Digite o nome do novo serviço: ").lower().strip()
+                        nova_descricao = input("Digite a nova descrição do novo serviço:").lower().strip()
                         novo_HorariosS = int(input("Digite o novo horário do novo serviço entre 10 da manhã e 18 da tarde:"))
                         while novo_HorariosS < 0:
                                 print("Horário inválido! Digite um horário maior que 0.")
@@ -236,8 +236,8 @@ while True:
 
                     elif opcao_produtos == "c":
                         print("---------LISTA DE PRODUTOS------------")
-                        for p in produtos:
-                            print(f"Produto: {p[0]} | Descrição: {p[1]} | Preço: {p[2]}")
+                        for s in servicos: 
+                            print(f"Serviço: {s[0]} | Descrição: {s[1]} | Horário: {s[2]} | Preço: {s[3]}")
 
                     elif opcao_produtos == "d":
                         print("---------ATUALIZAR LISTA DE PRODUTOS------------")
@@ -253,9 +253,9 @@ while True:
                         print(f"Descrição Atual: {produtos[indice][1]}")
                         print(f"Preço Atual: {produtos[indice][2]}")
 
-                        novo_nomeP = input("Digite o nome do novo produto: ")
-                        nova_descricaoP = input("Digite a nova descrição do novo produto: ")
-                        novo_precoP = float(input("Digite o novo preço do produto: "))
+                        novo_nomeP = input("Digite o nome do novo produto: ").lower().strip()
+                        nova_descricaoP = input("Digite a nova descrição do novo produto: ").lower().strip()
+                        novo_precoP = float(input("Digite o novo preço do produto: ")).lower().strip()
 
                         novaSublistaProdutos = [novo_nomeP, nova_descricaoP, novo_precoP]
                         produtos[indice] = novaSublistaProdutos
@@ -272,7 +272,6 @@ while True:
                         indice = int(input("Digite o indice do produto que você deseja remover: "))
 
                         produtos.remove(produtos[indice])
-                        #perguntar a Guilherme porque quando rodo o código aparece a pergunta de qual indice quero remover duas vezes
 
                     else:
                         print("Erro.Escolha uma opção válida!")
