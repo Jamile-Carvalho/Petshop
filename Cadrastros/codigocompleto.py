@@ -1,6 +1,6 @@
 usuario = []
 servicos = []
-perfil = []
+perfil = ""
 produtos = []
 while True:
     print('Bem vindo ao Pet e Cia!!!')
@@ -237,7 +237,7 @@ while True:
                     elif opcao_produtos == "c":
                         print("---------LISTA DE PRODUTOS------------")
                         for s in servicos: 
-                            print(f"Serviço: {s[0]} | Descrição: {s[1]} | Horário: {s[2]} | Preço: {s[3]}")
+                            print(f"Serviço: {p[0]} | Descrição: {p[1]} | Preço: {p[2]}")
 
                     elif opcao_produtos == "d":
                         print("---------ATUALIZAR LISTA DE PRODUTOS------------")
@@ -272,6 +272,7 @@ while True:
                         indice = int(input("Digite o indice do produto que você deseja remover: "))
 
                         produtos.remove(produtos[indice])
+                        #perguntar a Guilherme por que está aparecendo a pergunte de qual indice quer remover duas vezes
 
                     else:
                         print("Erro.Escolha uma opção válida!")
