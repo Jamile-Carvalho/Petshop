@@ -19,7 +19,7 @@ while True:
 
     elif opcao == 1:
         print('efetue seu cadastro!')
-        nome = input('nome: ').strip()
+        nome = input('nome: ').strip().lower()
         senha = input('senha: ')
         senha2 = input('confirme sua senha: ')
         tipo = input('digite se voce é administrador ou cliente: ').strip()
@@ -118,7 +118,7 @@ while True:
 
                     elif opcao_servicos =="b":
                         print("---------BUSCAR SERVIÇOS------------")
-                        buscar = input('Digite o produto que deseja buscar:').lower().strip()
+                        buscar = input('Digite o produto que deseja buscar:').strip().lower()
                         servicosEncontrado = 0
                         for s in servicos:
                           if buscar.lower() in s[0].lower():
@@ -151,8 +151,8 @@ while True:
                         print(f"Horário Atual: {servicos[indice][2]}")
                         print(f"Preço Atual: {servicos[indice][3]}")
 
-                        novo_nome = input("Digite o nome do novo serviço: ").lower().strip()
-                        nova_descricao = input("Digite a nova descrição do novo serviço:").lower().strip()
+                        novo_nome = input("Digite o nome do novo serviço: ").strip().lower()
+                        nova_descricao = input("Digite a nova descrição do novo serviço:").strip().lower()
                         novo_HorariosS = int(input("Digite o novo horário do novo serviço entre 10 da manhã e 18 da tarde:"))
                         while novo_HorariosS < 0:
                                 print("Horário inválido! Digite um horário maior que 0.")
@@ -222,7 +222,7 @@ while True:
 
                     elif opcao_produtos =="b":
                         print("---------BUSCAR PRODUTOS------------")
-                        buscar = input('Digite o produto que deseja buscar:').lower().strip()
+                        buscar = input('Digite o produto que deseja buscar:').strip().lower()
                         produtoEncontrado = 0
                         for p in produtos:
                             if buscar.lower() in p[0].lower():
@@ -253,9 +253,9 @@ while True:
                         print(f"Descrição Atual: {produtos[indice][1]}")
                         print(f"Preço Atual: {produtos[indice][2]}")
 
-                        novo_nomeP = input("Digite o nome do novo produto: ").lower().strip()
-                        nova_descricaoP = input("Digite a nova descrição do novo produto: ").lower().strip()
-                        novo_precoP = float(input("Digite o novo preço do produto: ")).lower().strip()
+                        novo_nomeP = input("Digite o nome do novo produto: ").strip().lower()
+                        nova_descricaoP = input("Digite a nova descrição do novo produto: ").strip().lower()
+                        novo_precoP = float(input("Digite o novo preço do produto: ")).strip().lower()
 
                         novaSublistaProdutos = [novo_nomeP, nova_descricaoP, novo_precoP]
                         produtos[indice] = novaSublistaProdutos
