@@ -293,7 +293,7 @@ while True:
                                         descricaoatentimentoP = input("Digite uma descrição para o novo serviço cadastrado:").lower()
                                         preco = float(input("Digite o valor do novo serviço R$: "))
                                         while preco < 0:
-                                            print("Digite um preço válido!Tente Novamente!")
+                                            print("Digite um preço inválido!Tente Novamente!")
                                             preco = float(input("Digite o valor do novo serviço R$: "))
                                         
                                         HorariosS = int(input("Digite o horário do novo serviço entre 10 da manhã e 18 da tarde:"))
@@ -315,8 +315,8 @@ while True:
                                             print(f'Nome:{s[0]}')
                                             print(f'Preço R$:{s[1]}')
                                         atentimentoPEncontrado = 1
-                                    if atentimentoPEncontrado == 0:
-                                        print('Serviço não encontrado')
+                                        if atentimentoPEncontrado == 0:
+                                            print('Serviço não encontrado')
 
                                 elif opcao_atendimentoP == "c":
                                     print("---------LISTA DE SERVIÇOS------------") 
@@ -392,7 +392,7 @@ while True:
                                         descricaoProduto = input("Digite uma descrição para o novo produto cadastrado:").lower()
                                         preco = float(input("Digite o valor do novo produto R$: "))
                                         while preco < 0:
-                                            print("Digite um preço válido!Tente Novamente!")
+                                            print("Digite um preço inválido!Tente Novamente!")
                                             preco = float(input("Digite o valor do novo produto R$: "))
 
                                         produtos.append([nomeProduto,descricaoProduto, preco, quantidadep])
@@ -406,15 +406,15 @@ while True:
                                         if buscar.lower() in p[0].lower():
                                             print('------PRODUTO ENCONTRADO--------')
                                             print(f'Nome:{p[0]}')
-                                            print(f'Preço R$:{p[2]}')
+                                            print(f'Preço R$:{p[1]}')
                                             produtoEncontrado = 1
-                                    if produtoEncontrado == 0:
+                                        if produtoEncontrado == 0:
                                             print('Produto não encontrado')
 
                                 elif opcao_produtos == "c":
                                     print("---------LISTA DE PRODUTOS------------")
                                     for p in produtos: 
-                                        print(f"Serviço: {p[0]} | Preço: {p[2]}")
+                                        print(f"Produto: {p[0]} | Preço: {p[1]}")
 
                                 elif opcao_produtos == "d":
                                     print("---------ATUALIZAR LISTA DE PRODUTOS------------")
@@ -491,27 +491,27 @@ while True:
                                     if escolhaEstoque == "a":
                                         print("-----ATUALIZAR ESTOQUE DE SERVIÇOS--------")
                                         for indice in range(len(atendimentoP)):
-                                            print(f"Serviço{indice} - Serviço{atendimentoP[indice][0]}  (atual: {atendimentoP[indice][3]})")
+                                            print(f"Serviço{indice} - Serviço{atendimentoP[indice][0]}  (atual: {atendimentoP[indice][2]})")
                                         indice = int(input("Digite o indice do serviço que você deseja atualizar: "))
                                         while indice < 0 or indice >= (len(atendimentoP)):
                                             print("Indice Inválido.Tente novamente!")
                                             indice = int(input("Digite o indice do serviço que você deseja atualizar: "))
 
                                         novaQuantidade = int(input("Digite a nova quantidade: "))
-                                        atendimentoP[indice][4] = novaQuantidade
+                                        atendimentoP[indice][2] = novaQuantidade
                                         print("Estoque atualizado com sucesso.")
 
                                     elif escolhaEstoque == "b":
                                         print("-----ATUALIZAR ESTOQUE DE PRODUTOS--------")
                                         for indice in range(len(produtos)):
-                                            print(f"Produto{indice} - Produtos{produtos[indice][0]}  (atual: {produtos[indice][3]})")
+                                            print(f"Produto{indice} - Produtos{produtos[indice][0]}  (atual: {produtos[indice][2]})")
                                             indice = int(input("Digite o indice do produto que você deseja atualizar: "))
                                         while indice < 0 or indice >= (len(produtos)):
                                             print("Indice Inválido.Tente novamente!")
                                             indice = int(input("Digite o indice do produto que você deseja atualizar: "))
 
                                         novaQuantidade = int(input("Digite a nova quantidade: "))
-                                        produtos[indice][3] = novaQuantidade
+                                        produtos[indice][2] = novaQuantidade
                                         print("Estoque atualizado com sucesso.")
 
                                 elif opcao == "d":
