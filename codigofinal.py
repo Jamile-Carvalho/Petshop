@@ -421,8 +421,8 @@ while True:
                                     for indice in range(len(produtos)):
                                         print(f"Produto {indice} - Produtos {produtos[indice][0]}")
 
-                                        indice = int(input("Digite o indice do produto que você deseja atualizar: "))
-                                        while indice < 0 or indice >= (len(produtos)):
+                                    indice = int(input("Digite o indice do produto que você deseja atualizar: "))
+                                    while indice < 0 or indice >= (len(produtos)):
                                             print("Indice Inválido.Tente novamente!")
                                             indice = int(input("Digite o indice do produto que você deseja atualizar: "))
 
@@ -441,8 +441,8 @@ while True:
                                     for indice in range(len(produtos)):
                                         print(f"Produto {indice} - Produtos {produtos[indice][0]}")
 
-                                        indice = int(input("Digite o indice que você deseja remover: "))
-                                        while indice < 0 or indice >= (len(produtos)):
+                                    indice = int(input("Digite o indice que você deseja remover: "))
+                                    while indice < 0 or indice >= (len(produtos)):
                                             print("Indice Inválido.Tente novamente!")
                                             indice = int(input("Digite o indice que você deseja remover: "))
 
