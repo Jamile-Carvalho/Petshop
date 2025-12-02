@@ -1,4 +1,4 @@
-from dados import produtos, atendimentoP
+from dados import produtos
 
 
 def cadastrarprodutos():
@@ -8,8 +8,8 @@ def cadastrarprodutos():
     
     for s in range(quantidadep):
         print(f"Serviço {s+1} de {quantidadep}")
-        nomeatentimentoP = input("Digite o nome do novo produto:  ").lower()
-        descricaoatentimentoP = input("Digite uma descrição para o novo produto cadastrado: ").lower()
+        nomeproduto = input("Digite o nome do novo produto:  ").lower()
+        descricaoproduto = input("Digite uma descrição para o novo produto cadastrado: ").lower()
         preco = float(input("Digite o valor do novo prduto R$: "))
 
         while preco < 0:
@@ -22,10 +22,10 @@ def cadastrarprodutos():
             HorariosS = int(input("Digite o horário do novo produto: "))
             print("Horário Válido")
 
-        atendimentoP.append([nomeatentimentoP, descricaoatentimentoP, HorariosS, preco, quantidadep])
+        produtos.append([nomeproduto, preco, quantidadep])
 
-        print(f"O novo produto é {nomeatentimentoP}\n"
-              f"Descrição: {descricaoatentimentoP}\n"
+        print(f"O novo produto é {nomeproduto}\n"
+              f"Descrição: {descricaoproduto}\n"
               f"Preço - R$: {preco}\n"
               f"Horário: {HorariosS}\n"
               f"Cadastrado com sucesso.")

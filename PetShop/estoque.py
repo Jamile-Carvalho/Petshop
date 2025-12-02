@@ -6,7 +6,6 @@ def verestoqueservicos():
     if len(atendimentoP) == 0:
         print("Não há serviço no estoque.")
     else:
-        print("-----ESTOQUE DE SERVIÇOS--------")
         for s in atendimentoP:
             print(f"Serviço:{s[0]} | Preço:{s[1]} | Quantidade:{s[2]} ")
 
@@ -16,7 +15,6 @@ def verestoqueprodutos():
     if len(produtos) == 0:
         print("Não há produtos no estoque.")
     else:
-        print("-----ESTOQUE DE PRODUTOS--------")
         for p in produtos:
             print(f"Produto:{p[0]} | Preço: {p[1]} | Quantidade:{p[2]}")
 
@@ -79,7 +77,4 @@ def removerestoque():
             indice = int(input("Digite o indice do produto que você deseja remover: "))
 
         produtos.remove(produtos[indice])
-
-        # perguntar a Guilherme porque o print de toda a parte de estoque,
-        # como, por exemplo, REMOVER ESTOQUE está ficando duplicado
 
