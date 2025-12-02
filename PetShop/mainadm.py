@@ -1,23 +1,22 @@
 #Impotando os MENUS:
 
-from menus import menuGeralAdm, menuservicos, menuprodutos, menuestoque, menuAdocoes
+import menus 
 
 #Importando as FUNÇÕES:
-from servicos import cadastrarservicos, buscarservicos, listarservicos,atualizarservicos, removerservicos
+import servicos 
 
-from produtos import cadastrarprodutos, buscarprodutos, listarprodutos, atualizarprodutos,removerprodutos
+import produtos 
 
-from estoque import verestoqueservicos, verestoqueprodutos, atualizarestoque, removerestoque
+import estoque 
 
-from adocoes import cadastrarPets, listarPets, atualizarPets, removerPets
+import adocoes
 
 #Importando LISTAS GLOBAIS:
-from dados import atendimentoP, servicos, produtos, animaisAdocoes
-
+import dados 
 
 while True:
 
-    opcao = menuGeralAdm()
+    opcao = menus.menuGeralAdm()
 
     if opcao =="5":
         print("Saindo...")
@@ -25,94 +24,94 @@ while True:
 
     elif opcao == "1":
         while True:
-            opcao_atendimentoP = menuservicos()
+            opcao_atendimentoP = menus.menuservicos()
 
             if opcao_atendimentoP == "f":
                 break
 
             elif opcao_atendimentoP == "a":
-                cadastrarservicos()
+                servicos.cadastrarservicos()
 
             elif opcao_atendimentoP =="b":
-                buscarservicos()
+                servicos.buscarservicos()
 
             elif opcao_atendimentoP == "c":
-                listarservicos()
+                servicos.listarservicos()
 
-            elif atendimentoP == "d":
-                atualizarservicos()
+            elif opcao_atendimentoP == "d":
+                servicos.atualizarservicos()
 
             elif opcao_atendimentoP == "e":
-                removerservicos()
+                servicos.removerservicos()
 
             else:
                 print('Erro, escolha uma opção correta')
 
     elif opcao == "2":
         while True:
-            opcao_produtos = menuprodutos()
+            opcao_produtos = menus.menuprodutos()
 
             if opcao_produtos == "f":
                 break
 
             elif opcao_produtos == "a":
-                cadastrarprodutos()
+                produtos.cadastrarprodutos()
 
             elif opcao_produtos =="b":
-                buscarprodutos()
+                produtos.buscarprodutos()
 
             elif opcao_produtos == "c":
-                listarprodutos()
+                produtos.listarprodutos()
 
             elif opcao_produtos == "d":
-                atualizarprodutos()
+                produtos.atualizarprodutos()
 
             elif opcao_produtos =="e":
-                removerprodutos()
+                produtos.removerprodutos()
 
             else:
                 print('Erro, escolha uma opção correta')
 
     elif opcao =="3":
         while True:
-            opcao = menuestoque()
+            opcao = menus.menuestoque()
 
             if opcao == "e":
                 break
 
             elif opcao == "a":
-                verestoqueservicos()
+                estoque.verestoqueservicos()
 
             elif opcao == "b":
-                verestoqueprodutos()
+                estoque.verestoqueprodutos()
 
             elif opcao == "c":
-                atualizarestoque(opcao, atendimentoP, produtos)
+                estoque.atualizarestoque()
 
             elif opcao == "d":
-                removerestoque(opcao, atendimentoP, produtos)
+                estoque.removerestoque()
 
             else:
                 print('Erro, escolha uma opção correta')
 
     elif opcao =="4":
         while True:
-            opcao = menuAdocoes()
+            opcao = menus.menuAdocoes()
 
             if opcao == "e":
                 break
 
             elif opcao =="a":
-                cadastrarPets()
+                adocoes.cadastrarPets()
 
             elif opcao =="b":
-                listarPets()
+                adocoes.listarPets()
 
             elif opcao =="c":
-                atualizarPets()
+                adocoes.atualizarPets()
 
             elif opcao =="d":
-                removerPets()
+                adocoes.removerPets()
 
     else:
         print('Erro, escolha uma opção correta')

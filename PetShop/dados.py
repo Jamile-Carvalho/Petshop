@@ -4,7 +4,6 @@ produtos = [['ração',150 , 70] ,['shampoo' , 30 , 70] , ['condicionador' , 30 
 animaisAdocoes = []
 listaD = []
 HorariosD = ['10h', '12h',  '16h', '18h']
-servicos = []
 contador1 = 0
 contador2 = 0
 contador3 = 0
