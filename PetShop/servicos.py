@@ -20,39 +20,45 @@ def cadastrarservicos():
             HorariosS = int(input("Digite o horário do novo serviço:"))
             print("Horário Válido")
 
-        atendimentoP.append([nomeatentimentoP,descricaoatentimentoP,HorariosS, preco, quantidade])
-        print(f"O novo serviço é {nomeatentimentoP}\n Descrição: {descricaoatentimentoP}\n Preço - R$:{preco}\n Horário: {HorariosS}\n Cadastrados com sucesso.")
+        atendimentoP.append({
+            "atendimento":nomeatentimentoP,
+            "descrição":descricaoatentimentoP,
+            "horario":HorariosS, 
+            "preco":preco, 
+            "quantidade":quantidade})
+        
+        print(f'O novo serviço é {nomeatentimentoP}\n Descrição: {descricaoatentimentoP}\n Preço - R$:{preco}\n Horário: {HorariosS}\n Cadastrados com sucesso.')
 
 def buscarservicos():
     print("---------BUSCAR SERVIÇOS------------")
     buscar = input('Digite o produto que deseja buscar:').lower()
-    atentimentoPEncontrado = 0
     for s in atendimentoP:
-        if buscar.lower() in s[0].lower():
+        if buscar.lower() in s['atendimento'].lower():
             print('------SERVIÇO ENCONTRADO--------')
-            print(f'Nome:{s[0]}')
-            print(f'Preço R$:{s[1]}')
+            print(f"Nome:{s['atendimento']}")
+            print(f"Preço R$:{s['preco']}")
         atentimentoPEncontrado = 1
+        
         if atentimentoPEncontrado == 0:
             print('Serviço não encontrado')
 
 def listarservicos():
     print("---------LISTA DE SERVIÇOS------------") 
     for s in atendimentoP: 
-        print(f"Produto: {s[0]} | Preço: {s[1]}")
+        print(f"Serviço: {s['atendimento']} | Preço: {s['preco']}")
 
 def atualizarservicos():
     print("---------ATUALIZAR LISTA DE SERVIÇOS------------")
     for indice in range(len(atendimentoP)):
-        print(f"Serviço {indice} - Serviços {atendimentoP[indice][0]}")
+        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['atendimento']}")
 
     indice = int(input("Digite o indice que você deseja atualizar: "))
     while indice < 0 or indice >= len(atendimentoP):
         print("Indice Inválido. Tente novamente!")
         indice = int(input("Digite o indice que você deseja atualizar: "))
 
-    print(f"Servico Atual: {atendimentoP[indice][0]}")
-    print(f"Preço Atual: {atendimentoP[indice][1]}")
+    print(f"Servico Atual: {atendimentoP[indice]['atendimento']}")
+    print(f"Preço Atual: {atendimentoP[indice]['preco']}")
 
     novo_nome = input("Digite o nome do novo serviço: ").lower()
     novo_HorariosS = int(input("Digite o novo horário do novo serviço entre 10 da manhã e 18 da tarde: "))
@@ -66,15 +72,16 @@ def atualizarservicos():
         print("Digite um preço válido! Tente novamente!")
         novo_preco = float(input("Digite o valor do novo serviço R$: "))
 
-    novaSublistaatendimentoP = [novo_nome, novo_HorariosS, novo_preco]
-    atendimentoP[indice] = novaSublistaatendimentoP
+    atendimentoP[indice]['atendimento'] = novo_nome
+    atendimentoP[indice]['horario'] = novo_HorariosS
+    atendimentoP[indice]['preco'] = novo_preco
+
     print("Serviço atualizado com sucesso!!")
-    #pergunta a Guilherme porque não consigo atualizar nenhum serviço
 
 def removerservicos():
     print("---------REMOVER SERVIÇOS------------")
     for indice in range(len(atendimentoP)):
-        print(f"Serviço {indice} - Serviços {atendimentoP[indice][0]}")
+        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['atendimento']}")
 
     indice = int(input("Digite o indice que você deseja remover: "))
     while indice < 0 or indice >= (len(atendimentoP)):

@@ -1,4 +1,4 @@
-from dados import produtos
+from dados import produtos 
 
 
 def cadastrarprodutos():
@@ -10,25 +10,20 @@ def cadastrarprodutos():
         print(f"Serviço {s+1} de {quantidadep}")
         nomeproduto = input("Digite o nome do novo produto:  ").lower()
         descricaoproduto = input("Digite uma descrição para o novo produto cadastrado: ").lower()
-        preco = float(input("Digite o valor do novo prduto R$: "))
+        preco = float(input("Digite o valor do novo produto R$: "))
 
         while preco < 0:
             print("Digite um preço inválido! Tente Novamente!")
             preco = float(input("Digite o valor do novo produto R$: "))
 
-        HorariosS = int(input("Digite o horário do novo produto entre 10 da manhã e 18 da tarde: "))
-        while HorariosS < 10 or HorariosS > 18:
-            print("Horário inválido! Digite um horário entre 10 e 18.")
-            HorariosS = int(input("Digite o horário do novo produto: "))
-            print("Horário Válido")
+        produtos.append({
+            "nome": nomeproduto,
+            "descriçãodoproduto": descricaoproduto,
+            "preco": preco
 
-        produtos.append([nomeproduto, preco, quantidadep])
-
-        print(f"O novo produto é {nomeproduto}\n"
-              f"Descrição: {descricaoproduto}\n"
-              f"Preço - R$: {preco}\n"
-              f"Horário: {HorariosS}\n"
-              f"Cadastrado com sucesso.")
+        })
+            
+        print(f'O novo produto é {nomeproduto}\n Descrição: {descricaoproduto}\n Preço - R$: {preco}\n Cadastrado com sucesso.')
 
     return quantidadep
 
@@ -36,12 +31,11 @@ def buscarprodutos():
     print("---------BUSCAR PRODUTOS------------")
     buscar = input('Digite o produto que deseja buscar: ').lower()
     produtoEncontrado = 0
-
     for p in produtos:
-        if buscar in p[0].lower():
+        if buscar in p['nome'].lower():
             print('------PRODUTO ENCONTRADO--------')
-            print(f'Nome: {p[0]}')
-            print(f'Preço R$: {p[1]}')
+            print(f'Nome: {p["nome"]}')
+            print(f'Preço R$: {p["preco"]}')
             produtoEncontrado = 1
 
     if produtoEncontrado == 0:
@@ -50,34 +44,33 @@ def buscarprodutos():
 def listarprodutos():
     print("---------LISTA DE PRODUTOS------------")
     for p in produtos:
-        print(f"Produto: {p[0]} | Preço: {p[1]}")
+        print(f'Produto: {p["nome"]} | Preço: {p["preco"]}')
 
 def atualizarprodutos():
     print("---------ATUALIZAR LISTA DE PRODUTOS------------")
     for indice in range(len(produtos)):
-        print(f"Produto {indice} - Produtos {produtos[indice][0]}")
+        print(f"Produto {indice} - Produtos {produtos[indice]['nome']}")
 
     indice = int(input("Digite o indice do produto que você deseja atualizar: "))
     while indice < 0 or indice >= len(produtos):
         print("Indice Inválido. Tente novamente!")
         indice = int(input("Digite o indice do produto que você deseja atualizar: "))
 
-    print(f"Produto Atual: {produtos[indice][0]}")
-    print(f"Preço Atual: {produtos[indice][1]}")
+    print(f"Produto Atual: {produtos[indice]['nome']}")
+    print(f"Preço Atual: {produtos[indice]['preco']}")
 
     novo_nomeP = input("Digite o nome do novo produto: ").lower()
     novo_precoP = float(input("Digite o novo preço do produto: "))
 
-    novaSublistaProdutos = [novo_nomeP, novo_precoP]
-    produtos[indice] = novaSublistaProdutos
+    produtos[indice]['nome'] = novo_nomeP
+    produtos[indice]['preco'] = novo_precoP
 
     print("Produto atualizado com sucesso!!")
 
 def removerprodutos():
     print("---------REMOVER PRODUTOS------------")
     for indice in range(len(produtos)):
-        print(f"Produto {indice} - Produtos {produtos[indice][0]}")
-
+        print(f'Produto {indice} - Produtos {produtos[indice]['nome']}')
     indice = int(input("Digite o indice que você deseja remover: "))
     while indice < 0 or indice >= len(produtos):
         print("Indice Inválido. Tente novamente!")

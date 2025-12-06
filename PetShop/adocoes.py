@@ -15,7 +15,14 @@ def cadastrarPets():
             print("Digite uma idade válida!Tente Novamente!")
             idadePet = float(input("Digite a idade do pet: "))
                                         
-        animaisAdocoes.append([nomePet, especiePet, descricaoPet, idadePet])
+        animaisAdocoes.append({
+            "nome":nomePet, 
+            "especie":especiePet, 
+            "descrição":descricaoPet, 
+            "idade":idadePet
+
+            })
+
         print(f"O nome do pet é {nomePet}\n Espécie do Pet: {especiePet}\n Descrição do Pet:{descricaoPet}\n Idade do Pet: {idadePet}\n Cadastrados com sucesso.")
 
 def listarPets():
@@ -25,21 +32,20 @@ def listarPets():
                                     
     else:
         for d in animaisAdocoes: 
-           print(f"Nome: {d[0]} | Espécie: {d[1]} | Idade: {d[3]}")
+           print(f"Nome: {d['nome']} | Espécie: {d['especie']} | Idade: {d['idade']}")
 
 def atualizarPets():
     print("-----ATUALIZAR PETS--------")
     for indice in range(len(animaisAdocoes)):
-        print(f"Animal {indice} - Animais {animaisAdocoes[indice][0]}")
-
+        print(f"Animal {indice} - Animais {animaisAdocoes[indice]['nome']}")
     indice = int(input("Digite o indice que você deseja atualizar: "))
     while indice < 0 or indice >= (len(animaisAdocoes)):
         print("Indice Inválido.Tente novamente!")
         indice = int(input("Digite o indice que você deseja atualizar: "))
 
-    print(f"Nome do Pet Atual: {animaisAdocoes[indice][0]}")
-    print(f"Espécie do Pet Atual: {animaisAdocoes[indice][1]}")
-    print(f"Idade Atual: {animaisAdocoes[indice][3]}")
+    print(f"Nome do Pet Atual: {animaisAdocoes[indice]['nome']}")
+    print(f"Espécie do Pet Atual: {animaisAdocoes[indice]['especie']}")
+    print(f"Idade Atual: {animaisAdocoes[indice]['idade']}")
 
     novo_nomePet = input("Digite o nome do pet: ").lower()
     nova_especiePet = input("Digite a espécie do Pet:")
@@ -49,14 +55,16 @@ def atualizarPets():
         print("Digite uma idade válida!Tente Novamente!")
         nova_idadePet = float(input("Digite a idade do pet: "))
 
-    novaSublistaAdocoesPets = [novo_nomePet,nova_especiePet, nova_idadePet]
-    animaisAdocoes[indice] = novaSublistaAdocoesPets
+    animaisAdocoes[indice]['nome'] = novo_nomePet
+    animaisAdocoes[indice]['especie'] = nova_especiePet
+    animaisAdocoes[indice]['idade'] = nova_idadePet
+
     print("Lista de Pets Disponiveís atualizada com sucesso!!")
 
 def removerPets():
     print("---------REMOVER PETS------------")
     for indice in range(len(animaisAdocoes)):
-        print(f"Animal {indice} - Animais {animaisAdocoes[indice][0]}")
+        print(f"Animal {indice} - Animais {animaisAdocoes[indice]['nome']}")
 
     indice = int(input("Digite o indice do pet que você deseja remover: "))
     while indice < 0 or indice >= (len(animaisAdocoes)):

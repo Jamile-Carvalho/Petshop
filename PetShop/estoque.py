@@ -7,7 +7,7 @@ def verestoqueservicos():
         print("Não há serviço no estoque.")
     else:
         for s in atendimentoP:
-            print(f"Serviço:{s[0]} | Preço:{s[1]} | Quantidade:{s[2]} ")
+            print(f'Serviço:{s["atendimento"]} | Preço:{s["preco"]} | Quantidade:{s["quantidade"]} ')
 
 
 def verestoqueprodutos():
@@ -16,7 +16,7 @@ def verestoqueprodutos():
         print("Não há produtos no estoque.")
     else:
         for p in produtos:
-            print(f"Produto:{p[0]} | Preço: {p[1]} | Quantidade:{p[2]}")
+            print(f'Produto:{p["nome"]} | Preço: {p["preco"]} | Quantidade:{p["estoque"]}')
 
 
 def atualizarestoque():
@@ -25,7 +25,7 @@ def atualizarestoque():
     if escolhaEstoque == "a":
         print("-----ATUALIZAR ESTOQUE DE SERVIÇOS--------")
         for indice in range(len(atendimentoP)):
-            print(f"Serviço{indice} - Serviço{atendimentoP[indice][0]}  (atual: {atendimentoP[indice][2]})")
+            print(f"Serviço{indice} - Serviço{atendimentoP[indice]["atendimento"]}  (atual: {atendimentoP[indice]["quantidade"]})")
 
         indice = int(input("Digite o indice do serviço que você deseja atualizar: "))
         while indice < 0 or indice >= len(atendimentoP):
@@ -33,13 +33,13 @@ def atualizarestoque():
             indice = int(input("Digite o indice do serviço que você deseja atualizar: "))
 
         novaQuantidade = int(input("Digite a nova quantidade: "))
-        atendimentoP[indice][2] = novaQuantidade
+        atendimentoP[indice]["quantidade"] = novaQuantidade
         print("Estoque atualizado com sucesso.")
 
     elif escolhaEstoque == "b":
         print("-----ATUALIZAR ESTOQUE DE PRODUTOS--------")
         for indice in range(len(produtos)):
-            print(f"Produto{indice} - Produtos{produtos[indice][0]}  (atual: {produtos[indice][2]})")
+            print(f"Produto{indice} - Produtos{produtos[indice]["nome"]}  (atual: {produtos[indice]["estoque"]})")
 
         indice = int(input("Digite o indice do produto que você deseja atualizar: "))
         while indice < 0 or indice >= len(produtos):
@@ -47,7 +47,7 @@ def atualizarestoque():
             indice = int(input("Digite o indice do produto que você deseja atualizar: "))
 
         novaQuantidade = int(input("Digite a nova quantidade: "))
-        produtos[indice][2] = novaQuantidade
+        produtos[indice]["estoque"] = novaQuantidade
         print("Estoque atualizado com sucesso.")
 
 
@@ -57,7 +57,7 @@ def removerestoque():
     if escolhaEstoque == "a":
         print("-----REMOVER DE ESTOQUE DE SERVIÇOS--------")
         for indice in range(len(atendimentoP)):
-            print(f"Serviço {indice} - Serviços {atendimentoP[indice][0]}")
+            print(f"Serviço {indice} - Serviços {atendimentoP[indice]['nome']}")
 
         indice = int(input("Digite o indice do serviço que você deseja remover: "))
         while indice < 0 or indice >= len(atendimentoP):
@@ -69,7 +69,7 @@ def removerestoque():
     if escolhaEstoque == "b":
         print("-----REMOVER DE ESTOQUE DE PRODUTOS--------")
         for indice in range(len(produtos)):
-            print(f"Produto {indice} - Produtos {produtos[indice][0]}")
+            print(f"Produto {indice} - Produtos {produtos[indice]['nome']}")
 
         indice = int(input("Digite o indice do produto que você deseja remover: "))
         while indice < 0 or indice >= len(produtos):

@@ -1,14 +1,38 @@
 usuario = [] 
-produtos = [['ração',150 , 70] ,['shampoo' , 30 , 70] , ['condicionador' , 30 , 70],['brinquedo' , 20 , 70] , ['coleira' , 20 ,70],['casinha',80, 70] , ['caminha' ,100, 70] , ['caixa de transporte' , 210 ,70] , ['escova' , 25 , 70] , ['kit de perfume' , 150 , 70]]
+produtos = [
+    {'nome': 'ração','preco': 150, 'estoque': 70},
+    {'nome': 'shampoo','preco': 30, 'estoque': 70},
+    {'nome': 'condicionador','preco': 30, 'estoque': 70},
+    {'nome': 'brinquedo','preco': 20, 'estoque': 70},
+    {'nome': 'coleira','preco': 20, 'estoque': 70},
+    {'nome': 'casinha','preco': 80, 'estoque': 70},
+    {'nome': 'caminha','preco': 100, 'estoque': 70},
+    {'nome': 'caixa de transporte','preco': 210, 'estoque': 70},
+    {'nome': 'escova','preco': 25, 'estoque': 70},
+    {'nome': 'kit de perfume','preco': 150, 'estoque': 70}
+]
+
 
 animaisAdocoes = []
 listaD = []
-HorariosD = ['10h', '12h',  '16h', '18h']
+HorariosD = [
+    {'horário':'10h'}, 
+    {'horário':'12h'},  
+    {'horário':'16h'}, 
+    {'horário':'18h'}
+]
+
 contador1 = 0
 contador2 = 0
 contador3 = 0
 contador4 = 0
 
-atendimentoP = [['banho', 70, 3], ['tosa', 40, 3], ['banho e tosa', 100, 3], ['consulta', 120, 3]]
+atendimentoP = [
+    {'atendimento': 'banho', 'preco': 70, 'disponibilidade': 3},
+    {'atendimento': 'tosa', 'preco': 40, 'disponibilidade': 3},
+    {'atendimento': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
+    {'atendimento': 'consulta', 'preco': 120, 'disponibilidade': 3}
+]
+
 avaliacao = []
 valort = 0
