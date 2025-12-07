@@ -11,14 +11,17 @@ import estoque
 
 import adocoes
 
+import backup
+
 #Importando LISTAS GLOBAIS:
 import dados 
+
 
 while True:
 
     opcao = menus.menuGeralAdm()
 
-    if opcao =="5":
+    if opcao =="6":
         print("Saindo...")
         break
 
@@ -112,8 +115,22 @@ while True:
 
             elif opcao =="d":
                 adocoes.removerPets()
+            else:
+                print('Erro, escolha uma opção correta')
 
-    else:
-        print('Erro, escolha uma opção correta')
+    elif opcao == "5":
+        while True:
+            opcao = menus.menubackup()
+
+            if opcao == "c":
+                break
+
+            elif opcao == "a":
+                backup.gerarbackup()
+
+            elif opcao == "b":
+                backup.importarbackup()                
+
                                 
-                                
+    
+              
