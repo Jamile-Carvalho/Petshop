@@ -4,7 +4,7 @@ import dados
 
 
 def gerarbackup():
-    caminho = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos"
+    caminho = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\backup.tx"
     with open(caminho, "a", encoding="utf-8") as arq:
         for s in dados.atendimentoP:
             arq.write(f"{s['atendimento']},{s['preco']},{s['disponibilidade']}")
@@ -16,26 +16,18 @@ def gerarbackup():
     print("Backup gerado com sucesso!")
 
 def importarbackup():
-    dados.servicos()
-    caminho = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos"
+    caminho = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\backup.txt"
     with open(caminho, "a", encoding="utf-8") as arq:
-        for linha in arq:
-            atendimentoP, preco, disponibilidade = linha.strip().split(",")
-            dados.atendimentoP.append({
-                "atendimento": nomeatendimentoP,
-                "preco": preco,
-                "disponibilidade":disponibilidade
+        for s in atendimentoP:
+            linha = f'{["atendimento"], ["preco"], ["estoque"]}'
+            linha = linha.replace("\n", "")
+            arq.write(linha + '\n')
 
-            })
-
-    with open("produtos.txt", "a", encoding="uft-8") as arq:
-        for linha in arq:
-            produto,preco,estoque = linha.strip().split(",")
-            dados.produtos.append ({
-                "produto": nomeproduto,
-                "preco": preco,
-                "estoque": estoque
-
-            })
+    caminho = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\backup.txt"
+    with open(caminho, "a", encoding="utf-8") as arq:
+        for p in produtos:
+            linha = f'{["produto"], ["preco"], ["estoque"]}'
+            linha = linha.replace("\n", "")
+            arq.write(linha + '\n')
 
     print("Dados importados com sucesso!")
