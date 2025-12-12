@@ -19,8 +19,9 @@ def cadastrarprodutos():
         produtos.append({
             "nome": nomeproduto,
             "descriçãodoproduto": descricaoproduto,
-            "preco": preco
-
+            "preco": preco,
+            "quantidade":quantidadep,
+            "estoque": 70
         })
             
         print(f'O novo produto é {nomeproduto}\n Descrição: {descricaoproduto}\n Preço - R$: {preco}\n Cadastrado com sucesso.')

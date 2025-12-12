@@ -129,8 +129,4 @@ while True:
                 backup.gerarbackup()
 
             elif opcao == "b":
-                backup.importarbackup()                
-
-                                
-    
-              
+                backup.importarbackup()                      

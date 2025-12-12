@@ -11,8 +11,9 @@ def cadastrarservicos():
         descricaoatentimentoP = input("Digite uma descrição para o novo serviço cadastrado:").lower()
         preco = float(input("Digite o valor do novo serviço R$: "))
         while preco < 0:
-            print("Digite um preço inválido!Tente Novamente!")
+            print("Preço inválido!Tente Novamente!")
             preco = float(input("Digite o valor do novo serviço R$: "))
+            print("Preço Válido!")
                                         
         HorariosS = int(input("Digite o horário do novo serviço entre 10 da manhã e 18 da tarde:"))
         while HorariosS < 10 or HorariosS > 18:
@@ -25,7 +26,9 @@ def cadastrarservicos():
             "descrição":descricaoatentimentoP,
             "horario":HorariosS, 
             "preco":preco, 
-            "quantidade":quantidade})
+            "quantidade":quantidade,
+            "disponibilidade":3
+            })
         
         print(f'O novo serviço é {nomeatentimentoP}\n Descrição: {descricaoatentimentoP}\n Preço - R$:{preco}\n Horário: {HorariosS}\n Cadastrados com sucesso.')
 
