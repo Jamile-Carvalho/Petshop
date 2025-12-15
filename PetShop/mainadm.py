@@ -1,11 +1,8 @@
-#Importando LISTAS GLOBAIS
-
 import dados
 
-#Impotando os MENUS:
 import menus 
 
-#Importando as FUNÇÕES:
+
 import servicos_funcoes 
 
 import produtos_funcoes 
@@ -21,7 +18,18 @@ import importarbackup
 import tabelas
 
 import funcoescami
-
+HorariosD = [
+    {'horario' : '10h'},
+    {'horario' : '12h'},
+    {'horario' : '16h'},
+    {'horario' : '18h'},
+]
+atendimentoP = [
+    {'atendimento' : 'banho' , 'preco' : 70 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'tosa' , 'preco' : 40 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'banho e tosa' , 'preco' : 100 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'consulta' , 'preco' : 120 , 'disponibilidade' : 3}
+] 
 while True:
     funcoescami.menuinicial()
     opcao = int(input('digite uma opcao: '))
@@ -48,8 +56,53 @@ while True:
                     funcoescami.compraraP(dados.produtos)
 
                 elif opcao == 2:
-                    print('Escolha seu atendimento:')
-                    funcoescami.listaratendimento(dados.atendimentoP)
+                    print('escolha seu atendimento:')
+                    valort = 0
+
+                    funcoescami.listaratendimento(atendimentoP)
+
+                    print('Qual atendimento deseja realizar?')
+                    atendimento = input(
+                        'digite o atendimento que deseja realizar: '
+                    ).lower()
+
+                    if funcoescami.acharAtendimento(atendimentoP, atendimento) == True:
+                        for h in range(len(HorariosD)):
+                            print(f"horarios: {HorariosD[h]['horario']}")
+
+                        horario = input('digite o horario que deseja marcar: ')
+
+                        while horario not in HorariosD:
+                            print('horario invalido!!')
+                            horario = input('digite o horario que deseja marcar: ')
+
+                        if horario == '10h':
+                            if contador1 < 3:
+                                contador1 += 1
+                                funcoescami.paghorario(atendimentoP, valort, atendimento)
+                            else:
+                                print('esse horario esta cheio!')
+
+                        elif horario == '12h':
+                            if contador2 < 3:
+                                contador2 += 1
+                                funcoescami.paghorario(atendimentoP, valort, atendimento)
+                            else:
+                                print('esse horario esta cheio!')
+
+                        elif horario == '16h':
+                            if contador3 < 3:
+                                contador3 += 1
+                                funcoescami.paghorario(atendimentoP, valort, atendimento)
+                            else:
+                                print('esse horario esta cheio!')
+
+                        elif horario == '18h':
+                            if contador4 < 3:
+                                contador4 += 1
+                                funcoescami.paghorario(atendimentoP, valort, atendimento)
+                            else:
+                                print('esse horario esta cheio!')
 
                 elif opcao == 3:
                     funcoescami.av(dados.avaliacao)

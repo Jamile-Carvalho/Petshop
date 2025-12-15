@@ -1,0 +1,30 @@
+Nome: c
+Senha: c
+Tipo: cliente
+Idade: 1
+Nome do Pet: 1
+-------------------------------------------------------
+Nome: c
+Senha: c
+Tipo: cliente
+Idade: 1
+Nome do Pet: 1
+-------------------------------------------------------
+Nome: c
+Senha: c
+Tipo: cliente
+Idade: 1
+Nome do Pet: 1
+-------------------------------------------------------
+Nome: c
+Senha: c
+Tipo: cliente
+Idade: 1
+Nome do Pet: 1
+-------------------------------------------------------
+Nome: c
+Senha: c
+Tipo: cliente
+Idade: 1
+Nome do Pet: 1
+-------------------------------------------------------

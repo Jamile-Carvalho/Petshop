@@ -12,10 +12,10 @@ produtos = [
 ]
 
 atendimentoP = [
-    {'atendimento' : 'banho' , 'preco' : 70 , 'disponibilidade' : 3} ,
-    {'atendimento' : 'tosa' , 'preco' : 40 , 'disponibilidade' : 3} ,
-    {'atendimento' : 'banho e tosa' , 'preco' : 100 , 'disponibilidade' : 3} ,
-    {'atendimento' : 'consulta' , 'preco' : 120 , 'disponibilidade' : 3}
+    {'nome' : 'banho' , 'preco' : 70 , 'disponibilidade' : 3} ,
+    {'nome' : 'tosa' , 'preco' : 40 , 'disponibilidade' : 3} ,
+    {'nome' : 'banho e tosa' , 'preco' : 100 , 'disponibilidade' : 3} ,
+    {'nome' : 'consulta' , 'preco' : 120 , 'disponibilidade' : 3}
 ] 
 HorariosD = [
     {'horario' : '10h'},
@@ -51,42 +51,46 @@ def listaProdutos(produtos):
 
 def listaratendimento(atendimentoP):
     for a in range(len(atendimentoP)):
-        print(f'atendimento | {atendimentoP[a]['nome']} | Valor | R$ {atendimentoP[a]['preco']}')
+        print(f'atendimento {atendimentoP[a]['nome']} | Valor {atendimentoP[a]['preco']}')
+
+
 
 
 def acharAtendimento(atendimentoP , atendimento):
-    
     for h in range(len(atendimentoP)):
-        if atendimento.lower() == atendimentoP[h]['atendimento'].lower():
+        if atendimento.lower() == atendimentoP[h]['nome'].lower():
             print('Atendimento encontrado com sucesso!')
             print('agora realize o agendamento do horario que você deseja!!')
             return True
-            break
-            
     else:
         print('atendimento não encontrado! ')
 
 
 
 
-def paghorario(atendimentoP , valort , atendimento):
-    print('horario marcado com sucesso!')
+def paghorario(atendimentoP):
+    print('Horário marcado com sucesso!')
+
+    valort = 0  
+
     
+    produtoC = input(f'Digite o nome do atendimento: ')
+    for i in range(len(produtos)):
+                if produtoC.lower() == atendimentoP[i]['nome'].lower():
+                    achouP = 1
     for a in range(len(atendimentoP)):
-        if atendimento == atendimentoP[a]['atendimento']:
-            valort += atendimentoP[a]['preco']
-            print(f'o valor total do atendimento foi R${valort}')
+        valort += atendimentoP[a]['preco']
 
-            pagamento = float(input('Insira quanto de dinheiro você vai dar: '))
+    print(f'O valor total do atendimento foi R${valort}')
 
-            while pagamento < 0 or pagamento < valort:
-                print('Valor inválido! Digite novamente!')
-                pagamento = float(input('Insira quanto de dinheiro você vai dar: '))
+    pagamento = float(input('Insira quanto de dinheiro você vai dar: '))
 
-            if pagamento >= valort:
-                troco = pagamento - valort
-                print(f'Compra concluída com sucesso! Seu troco é: R${troco}')
-                
+    while pagamento < valort:
+        print('Valor inválido! Digite novamente!')
+        pagamento = float(input('Insira quanto de dinheiro você vai dar: '))
+
+    troco = pagamento - valort
+    print(f'Compra concluída com sucesso! Seu troco é: R${troco}')
 
 
 
@@ -146,7 +150,7 @@ def cadastrarUsuario(usuario):
 
    
 
-    
+   
         
     usuario.append({
             'nome': nome,
@@ -282,3 +286,5 @@ def login(usuario):
     else:
         print(f'login efetuado com sucesso!!Bem vindo {nome}!!')
         return tipo
+    
+
