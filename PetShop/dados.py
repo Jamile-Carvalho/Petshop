@@ -12,8 +12,31 @@ produtos = [
     {'nome': 'kit de perfume','preco': 150, 'estoque': 70}
 ]
 
+estoque = [
+    {'tipo': 'produto', 'nome': 'ração', 'preco': 150, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'shampoo', 'preco': 30, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'condicionador', 'preco': 30, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'brinquedo', 'preco': 20, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'coleira', 'preco': 20, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'casinha', 'preco': 80, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'caminha', 'preco': 100, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'caixa de transporte', 'preco': 210, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'escova', 'preco': 25, 'quantidade': 70},
+    {'tipo': 'produto', 'nome': 'kit de perfume', 'preco': 150, 'quantidade': 70},
 
-animaisAdocoes = []
+    {'tipo': 'nome': 'banho', 'preco': 70, 'disponibilidade': 3},
+    {'tipo':'nome': 'tosa', 'preco': 40, 'disponibilidade': 3},
+    {'tipo':'nome': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
+    {'tipo':'nome': 'consulta', 'preco': 120, 'disponibilidade': 3}
+]
+
+animaisAdocoes = [
+    {'nome': 'rex', 'especie': 'cachorro', 'idade': 4},
+    {'nome': 'mia', 'especie': 'gato', 'idade': 1},
+    {'nome': 'thor', 'especie': 'cachorro', 'idade': 3},
+    {'nome': 'luna', 'especie': 'gato', 'idade': 0.8}
+]
+
 listaD = []
 HorariosD = [
     {'horário':'10h'}, 
@@ -28,11 +51,12 @@ contador3 = 0
 contador4 = 0
 
 atendimentoP = [
-    {'atendimento': 'banho', 'preco': 70, 'disponibilidade': 3},
-    {'atendimento': 'tosa', 'preco': 40, 'disponibilidade': 3},
-    {'atendimento': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
-    {'atendimento': 'consulta', 'preco': 120, 'disponibilidade': 3}
+    {'nome': 'banho', 'preco': 70, 'disponibilidade': 3},
+    {'nome': 'tosa', 'preco': 40, 'disponibilidade': 3},
+    {'nome': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
+    {'nome': 'consulta', 'preco': 120, 'disponibilidade': 3}
 ]
 
 avaliacao = []
+
 valort = 0

@@ -5,16 +5,9 @@ def menuGeralAdm():
     print("3-Estoque")
     print("4-Adoções de Pets")
     print("5-Backup")
-    print("6-Sair")
-    opcao = input("Digite uma das opções para continuar: ")
-    return opcao
-
-def menuinicial():     #menu do usuario
-    print('Bem vindo ao Pet e Cia!!!')
-    print('Escolha uma das opções abaixo: ')
-    print('1 - Cadastro')
-    print('2 - login')
-    print('0 - Sair')
+    print("6-Importar Backup")
+    print("7-Ver Tabelas")
+    print("8-Sair")
     opcao = input("Digite uma das opções para continuar: ")
     return opcao
 
@@ -69,8 +62,22 @@ def menuAdocoes():
 
 def menubackup():
      print("BEM VINDO AO MENU DE BACKUP")
-     print("a-Gerar backup")
-     print("b-Importar backup")
-     print("c-Voltar")
+     print("a-Gerar backup de Serviços")
+     print("b-Gerar backup de Produtos")
+     print("c-Gerar backup de Estoque")
+     print("d-Gerar backup de Adoções")
+     print("e-Sair")
      opcao = input("Digite uma das opções para continuar: ")
      return opcao
+
+def menutabelas():
+    print("BEM VINDO AO MENU DE TABELAS")
+    print("a-Ver Tabela de Serviços")
+    print("b-Ver Tabela de Produtos")
+    print("c-Ver Tabela Estoque de Serviços")
+    print("d-Ver Tabela Estoque de produtos")
+    print("e-Ver Tabela de Adoções")
+    print("f-Sair")
+    opcao = input("Digite uma das opções para continuar: ")
+    return opcao
+

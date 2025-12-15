@@ -1,12 +1,11 @@
 from dados import animaisAdocoes
 
-
 def cadastrarPets():
     print("--------CADASTRAMENTO FLASH-------")
     print("--------PETS---------")
     quantidadePets = int(input("Digite a quantidade de pets que você deseja cadastrar:"))
-    for d in range(quantidadePets):
-        print(f'Pet {d+1} de {quantidadePets}')
+    for a in range(quantidadePets):
+        print(f'Pet {a+1} de {quantidadePets}')
         nomePet = input("Digite o nome do pet:  ").lower()
         especiePet = input("Digite a espécie de pet:")
         descricaoPet = input("Digite uma descrição do pet:").lower()
@@ -18,7 +17,7 @@ def cadastrarPets():
         animaisAdocoes.append({
             "nome":nomePet, 
             "especie":especiePet, 
-            "descrição":descricaoPet, 
+            "descricao":descricaoPet, 
             "idade":idadePet
 
             })
@@ -31,8 +30,8 @@ def listarPets():
         print("Nenhum animal está disponível para ser adotado!")
                                     
     else:
-        for d in animaisAdocoes: 
-           print(f"Nome: {d['nome']} | Espécie: {d['especie']} | Idade: {d['idade']}")
+        for a in animaisAdocoes: 
+           print(f"Nome: {a['nome']} | Espécie: {a['especie']} | Idade: {a['idade']}")
 
 def atualizarPets():
     print("-----ATUALIZAR PETS--------")

@@ -1,0 +1,22 @@
+
+========LISTA DE SERVIÇOS========
+banho,70, 3
+tosa,40, 3
+banho e tosa,100, 3
+consulta,120, 3
+
+========LISTA DE PRODUTOS========
+ração, 150, 70
+shampoo, 30, 70
+condicionador, 30, 70
+brinquedo, 20, 70
+coleira, 20, 70
+casinha, 80, 70
+caminha, 100, 70
+caixa de transporte, 210, 70
+escova, 25, 70
+kit de perfume, 150, 70
+
+========ESTOQUE========
+
+========ADOÇÕES========

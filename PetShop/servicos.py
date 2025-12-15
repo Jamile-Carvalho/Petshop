@@ -22,7 +22,7 @@ def cadastrarservicos():
             print("Horário Válido")
 
         atendimentoP.append({
-            "atendimento":nomeatentimentoP,
+            "nome":nomeatentimentoP,
             "descrição":descricaoatentimentoP,
             "horario":HorariosS, 
             "preco":preco, 
@@ -48,19 +48,19 @@ def buscarservicos():
 def listarservicos():
     print("---------LISTA DE SERVIÇOS------------") 
     for s in atendimentoP: 
-        print(f"Serviço: {s['atendimento']} | Preço: {s['preco']}")
+        print(f"Serviço: {s['nome']} | Preço: {s['preco']}")
 
 def atualizarservicos():
     print("---------ATUALIZAR LISTA DE SERVIÇOS------------")
     for indice in range(len(atendimentoP)):
-        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['atendimento']}")
+        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['nome']}")
 
     indice = int(input("Digite o indice que você deseja atualizar: "))
     while indice < 0 or indice >= len(atendimentoP):
         print("Indice Inválido. Tente novamente!")
         indice = int(input("Digite o indice que você deseja atualizar: "))
 
-    print(f"Servico Atual: {atendimentoP[indice]['atendimento']}")
+    print(f"Servico Atual: {atendimentoP[indice]['nome']}")
     print(f"Preço Atual: {atendimentoP[indice]['preco']}")
 
     novo_nome = input("Digite o nome do novo serviço: ").lower()
@@ -75,7 +75,7 @@ def atualizarservicos():
         print("Digite um preço válido! Tente novamente!")
         novo_preco = float(input("Digite o valor do novo serviço R$: "))
 
-    atendimentoP[indice]['atendimento'] = novo_nome
+    atendimentoP[indice]['nome'] = novo_nome
     atendimentoP[indice]['horario'] = novo_HorariosS
     atendimentoP[indice]['preco'] = novo_preco
 
@@ -84,7 +84,7 @@ def atualizarservicos():
 def removerservicos():
     print("---------REMOVER SERVIÇOS------------")
     for indice in range(len(atendimentoP)):
-        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['atendimento']}")
+        print(f"Serviço {indice} - Serviços {atendimentoP[indice]['nome']}")
 
     indice = int(input("Digite o indice que você deseja remover: "))
     while indice < 0 or indice >= (len(atendimentoP)):

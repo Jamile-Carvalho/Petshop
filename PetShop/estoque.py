@@ -7,7 +7,7 @@ def verestoqueservicos():
         print("Não há serviço no estoque.")
     else:
         for s in atendimentoP:
-            print(f'Serviço:{s["atendimento"]} | Preço:{s["preco"]} | Quantidade:{s["quantidade"]} ')
+            print(f'Serviço:{s["nome"]} | Preço:{s["preco"]} | Quantidade:{s["disponibilidade"]} ')
 
 
 def verestoqueprodutos():
@@ -25,7 +25,7 @@ def atualizarestoque():
     if escolhaEstoque == "a":
         print("-----ATUALIZAR ESTOQUE DE SERVIÇOS--------")
         for indice in range(len(atendimentoP)):
-            print(f"Serviço{indice} - Serviço{atendimentoP[indice]["atendimento"]}  (atual: {atendimentoP[indice]["quantidade"]})")
+            print(f"Serviço{indice} - Serviço{atendimentoP[indice]["nome"]}  (atual: {atendimentoP[indice]["disponibilidade"]})")
 
         indice = int(input("Digite o indice do serviço que você deseja atualizar: "))
         while indice < 0 or indice >= len(atendimentoP):

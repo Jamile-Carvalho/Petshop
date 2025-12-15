@@ -1,41 +1,174 @@
 from dados import atendimentoP
 from dados import produtos
 import dados
+import estoque
 
 
-def gerarbackup():
+def gerarbackupservicos():
 
-    caminho_servicos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\servico.txt"
+    caminho_servicos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\servicos.txt"
 
-    caminho_produtos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\produtos.txt"
-
-    with open(caminho_servicos, "a", encoding="utf-8") as arq:
+    with open(caminho_servicos, "w", encoding="utf-8") as arq:
         for s in dados.atendimentoP:
             linha = f'{s["atendimento"]},{s["preco"]},{s["disponibilidade"]}'
             linha = linha.replace("\n", "")
             arq.write(linha + '\n')
-            
-    with open(caminho_produtos, "a", encoding="utf-8") as arq:
+
+def atualizarbackupservicos(nome_procurado, novo_preco,disponibilidade):
+
+    caminho_servicos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\servicos.txt"
+
+    with open(caminho_servicos, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_servicos, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado, novo_preco, disponibilidade
+
+        if nome_procurado == nome_procurado:
+            arq.write(f"{nome_procurado},{novo_preco},{disponibilidade}\n")
+
+        else:
+            arq.write(linha)
+
+def removerbackupservicos(nome_procurado):
+
+    caminho_servicos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\servicos\\.txt"
+
+    with open(caminho_servicos, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_servicos, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado
+
+        if atendimentoP != nome_procurado:
+            arq.write(linha)
+
+
+def gerarbackupprodutos():
+
+    caminho_produtos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\produtos.txt"
+
+    with open(caminho_produtos, "w", encoding="utf-8") as arq:
         for p in dados.produtos:
             linha = f'{p["nome"]},{p["preco"]},{p["estoque"]}'
             linha = linha.replace("\n", "")
             arq.write(linha + '\n')
 
-    print("Backup gerado com sucesso!")
+def atualizarbackupprodutos(nome_procurado, novo_precoP,disponibilidade):
 
-def importarbackup():
-    caminho_backup = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\backup.txt"
-    with open(caminho_backup, "a", encoding="utf-8") as arq:
+    caminho_produtos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\produtos.txt"
+
+    with open(caminho_produtos, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_produtos, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado, novo_precoP, disponibilidade
+
+        if nome_procurado == nome_procurado:
+            arq.write(f"{nome_procurado},{novo_precoP},{disponibilidade}\n")
+
+        else:
+            arq.write(linha)
+
+def removerbackupprodutos(nome_procurado):
+
+    caminho_produtos = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\produtos.txt"
+
+    with open(caminho_produtos, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_produtos, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado
+
+        if produtos != nome_procurado:
+            arq.write(linha)
+
+def gerarbackupestoque():
+
+    caminho_estoque = "C:\\Users\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado"
+
+    with open(caminho_estoque, "w", encoding="utf-8") as arq:
+        arq.write("\n========ESTOQUE SERVIÇOS========\n")
         for s in atendimentoP:
-            linha = f'{s["atendimento"]},{s["preco"]}, {s["disponibilidade"]}'
+            linha = f'{s["atendimento"]},{s["preco"]},{s["disponibilidade"]}'
             linha = linha.replace("\n", "")
             arq.write(linha + '\n')
 
-    caminho_backup = "C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\backup.txt"
-    with open(caminho_backup, "a", encoding="utf-8") as arq:
+        arq.write("\n========ESTOQUE PRODUTOS========\n")
         for p in produtos:
-            linha = f'{p["nome"]}, {p["preco"]}, {p["estoque"]}'
+            linha = f'{p["nome"]},{p["preco"]},{p["estoque"]}'
             linha = linha.replace("\n", "")
             arq.write(linha + '\n')
 
-    print("Backup criado com sucesso!")
+def atualizarbackupestoqueS(nome_servico, novo_preco, nova_disponibilidade):
+    for s in dados.atendimentoP:
+        if s["atendimento"] == nome_servico:
+            s["preco"] = novo_preco
+            s["disponibilidade"] = nova_disponibilidade
+            gerarbackupservicos()
+
+def atualizarbackestoqueP(novo_produto, novo_preco, novo_estoque):
+    for p in dados.produtos:
+        if p["nome"] == novo_produto:
+            p["preco"] = novo_preco
+            p["estoque"] = novo_estoque
+            gerarbackupprodutos()  
+
+def removerbackupestoqueS(nome_servico):
+    for s in dados.atendimentoP:
+        if s["atendimento"] == nome_servico:
+            dados.animaisAdocoes.remove(s)
+            gerarbackupservicos()
+
+def removerbackupestoqueP(nome_produto):
+    for p in dados.produtos:
+        if p["nome"] == nome_produto:
+            dados.produtos.remove(p)
+            gerarbackupprodutos()
+
+def gerarbackupadocoes():
+
+    caminho_adocoes ="C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\adocoes.txt"
+
+    with open(caminho_adocoes, "w", encoding="utf-8") as arq:
+        for a in dados.animaisAdocoes:
+            linha = f'{a["nome"]},{a["especie"]}, {a["idade"]}'
+            linha = linha.replace("\n", "")
+            arq.write(linha + '\n')
+
+def atualizarbackadocoes(nome_procurado, nova_especiePet, nova_idadePet):
+
+    caminho_adocoes ="C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\adocadocoes"
+
+    with open(caminho_adocoes, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_adocoes, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado, nova_especiePet, nova_idadePet
+
+        if nome_procurado == nome_procurado:
+            arq.write(f"{nome_procurado},{nova_especiePet},{nova_idadePet}\n")
+
+        else:
+            arq.write(linha)
+
+def removerbackupadocoes(nome_procurado):
+
+    caminho_adocoes ="C:\\Users\\Maria Jamile\\OneDrive\\Documentos\\Faculdade\\Algoritmos\\Projeto-PetShop-Modularizado\\adocadocoes"
+
+    with open(caminho_adocoes, "r", encoding="utf-8") as arq:
+        linha = arq.readlines()
+
+    with open(caminho_adocoes, "w", encoding="utf-8") as arq:
+        for l in linha:
+            nome_procurado
+
+        if atendimentoP != nome_procurado:
+            arq.write(linha)
+
+
