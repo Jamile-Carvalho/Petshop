@@ -1,4 +1,3 @@
-import dados
 from dados import atendimentoP
 from dados import produtos
 from dados import animaisAdocoes
@@ -17,7 +16,7 @@ def importarbackup():
 
         arq.write("\n========LISTA DE PRODUTOS========\n")
         for p in produtos:
-            linha = f'{p["nome"]}, {p["preco"]}, {p["estoque"]}'
+            linha = f'{p["nome"]},{p["preco"]},{p["estoque"]}'
             linha = linha.replace("\n", "")
             arq.write(linha + '\n')
 

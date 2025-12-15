@@ -1,3 +1,7 @@
+#Importando LISTAS GLOBAIS
+
+import dados
+
 #Impotando os MENUS:
 import menus 
 
@@ -18,10 +22,7 @@ import tabelas
 
 import funcoescami
 
-#Importando as LISTAS GLOBAIS
-import dados 
 
-import funçõescami
 
 usuario = []
 produtos = [
@@ -38,10 +39,10 @@ produtos = [
 ]
 
 atendimentoP = [
-    {'atendimento': 'banho', 'preco': 70, 'disponibilidade': 3},
-    {'atendimento': 'tosa', 'preco': 40, 'disponibilidade': 3},
-    {'atendimento': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
-    {'atendimento': 'consulta', 'preco': 120, 'disponibilidade': 3}
+    {'nome': 'banho', 'preco': 70, 'disponibilidade': 3},
+    {'nome': 'tosa', 'preco': 40, 'disponibilidade': 3},
+    {'nome': 'banho e tosa', 'preco': 100, 'disponibilidade': 3},
+    {'nome': 'consulta', 'preco': 120, 'disponibilidade': 3}
 ]
 
 HorariosD = [
@@ -63,7 +64,7 @@ valort = 0
 
 
 while True:
-    funçõescami.menuinicial()
+    funcoescami.menuinicial()
     opcao = int(input('digite uma opcao: '))
 
     if opcao == 0:
@@ -73,11 +74,11 @@ while True:
         print('digite uma opcao valida!!')
 
     elif opcao == 1:
-        funçõescami.cadastrarUsuario(usuario)
+        funcoescami.cadastrarUsuario(usuario)
 
     elif opcao == 2:
-        if funçõescami.login(usuario):
-            funçõescami.menucompra()
+        if funcoescami.login(usuario):
+            funcoescami.menucompra()
 
             opcao = int(input('digite que opcao deseja realizar: '))
 
@@ -90,20 +91,20 @@ while True:
 
             elif opcao == 1:
                 print('Realize sua compra agora mesmo!')
-                funçõescami.listaProdutos(produtos)
-                funçõescami.compraraP(produtos)
+                funcoescami.listaProdutos(produtos)
+                funcoescami.compraraP(produtos)
 
             elif opcao == 2:
                 print('escolha seu atendimento:')
                 valort = 0
 
-                funçõescami.listaratendimento(atendimentoP)
+                funcoescami.listaratendimento(atendimentoP)
 
                 print('Qual atendimento deseja realizar?')
                 atendimento = input(
                     'digite o atendimento que deseja realizar: ').lower()
 
-                if funçõescami.acharAtendimento(atendimentoP, atendimento) == True:
+                if funcoescami.acharAtendimento(atendimentoP, atendimento) == True:
                     for h in range(len(HorariosD)):
                         print(f"horarios: {HorariosD[h]['horario']}")
 
@@ -116,36 +117,36 @@ while True:
                     if horario == '10h':
                         if contador1 < 3:
                             contador1 += 1
-                            funçõescami.paghorario(atendimentoP, valort, atendimento)
+                            funcoescami.paghorario(atendimentoP, valort, atendimento)
                         else:
                             print('esse horario esta cheio!')
 
                     elif horario == '12h':
                         if contador2 < 3:
                             contador2 += 1
-                            funçõescami.paghorario(atendimentoP, valort, atendimento)
+                            funcoescami.paghorario(atendimentoP, valort, atendimento)
                         else:
                             print('esse horario esta cheio!')
 
                     elif horario == '16h':
                         if contador3 < 3:
                             contador3 += 1
-                            funçõescami.paghorario(atendimentoP, valort, atendimento)
+                            funcoescami.paghorario(atendimentoP, valort, atendimento)
                         else:
                             print('esse horario esta cheio!')
 
                     elif horario == '18h':
                         if contador4 < 3:
                             contador4 += 1
-                            funçõescami.paghorario(atendimentoP, valort, atendimento)
+                            funcoescami.paghorario(atendimentoP, valort, atendimento)
                         else:
                             print('esse horario esta cheio!')
 
             elif opcao == 3:
-                funçõescami.av(avaliacao)
+                funcoescami.av(avaliacao)
 
             elif opcao == 4:
-                funçõescami.desejo(produtos, listaD)
+                funcoescami.desejo(produtos, listaD)
 
         else:
             print('Login não exite!')

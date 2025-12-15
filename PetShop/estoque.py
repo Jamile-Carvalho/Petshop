@@ -1,4 +1,4 @@
-from dados import atendimentoP, produtos
+from dados import estoque, atendimentoP, produtos
 
 
 def verestoqueservicos():
