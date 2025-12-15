@@ -1,6 +1,0 @@
-Nome: jamile
-Senha: 123
-Tipo: administrador
-Idade: 29
-Nome do Pet: kiki
--------------------------------------------------------
