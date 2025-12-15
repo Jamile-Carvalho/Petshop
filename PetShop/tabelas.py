@@ -79,9 +79,9 @@ def tabela_estoque_produtos():
 
     for p in produtos:
         table.add_row(
-            p["produto"],
+            p["nome"],
             f"{p['preco']}",
-            str(p["disponibilidade"])
+            str(p["estoque"])
 
         )
 
@@ -107,4 +107,3 @@ def tabela_adocoes():
         )
 
     console.print(table)
-

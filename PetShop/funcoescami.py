@@ -12,10 +12,10 @@ produtos = [
 ]
 
 atendimentoP = [
-    {'nome' : 'banho' , 'preco' : 70 , 'disponibilidade' : 3} ,
-    {'nome' : 'tosa' , 'preco' : 40 , 'disponibilidade' : 3} ,
-    {'nome' : 'banho e tosa' , 'preco' : 100 , 'disponibilidade' : 3} ,
-    {'nome' : 'consulta' , 'preco' : 120 , 'disponibilidade' : 3}
+    {'atendimento' : 'banho' , 'preco' : 70 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'tosa' , 'preco' : 40 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'banho e tosa' , 'preco' : 100 , 'disponibilidade' : 3} ,
+    {'atendimento' : 'consulta' , 'preco' : 120 , 'disponibilidade' : 3}
 ] 
 HorariosD = [
     {'horario' : '10h'},
@@ -57,7 +57,7 @@ def listaratendimento(atendimentoP):
 def acharAtendimento(atendimentoP , atendimento):
     
     for h in range(len(atendimentoP)):
-        if atendimento.lower() == atendimentoP[h]['nome'].lower():
+        if atendimento.lower() == atendimentoP[h]['atendimento'].lower():
             print('Atendimento encontrado com sucesso!')
             print('agora realize o agendamento do horario que você deseja!!')
             return True
@@ -73,7 +73,7 @@ def paghorario(atendimentoP , valort , atendimento):
     print('horario marcado com sucesso!')
     
     for a in range(len(atendimentoP)):
-        if atendimento == atendimentoP[a]['nome']:
+        if atendimento == atendimentoP[a]['atendimento']:
             valort += atendimentoP[a]['preco']
             print(f'o valor total do atendimento foi R${valort}')
 
@@ -264,21 +264,21 @@ def compraraP(produtos):
                 
         pagamento(valorT)
         break
-def login (usuario):
-        print('faça o seu login!!')
-        nome = input('digite seu nome: ')
-        senha = input('digite sua senha: ')
-        logado = 0
-        for i in usuario:
-            if i['nome'] == nome and i['senha'] == senha:
-                logado = 1
-                tipo = i['tipo']      
-        if logado == 0:
-            print('usuario nao encontrado!!!login invalido!!!')
-            
-        else:
-            print(f'login efetuado com sucesso!!Bem vindo {nome}!!')
-            if tipo == 'cliente':
-                return True
-                
-            
+
+def login(usuario):
+    print('faça o seu login!!')
+    nome = input('digite seu nome: ')
+    senha = input('digite sua senha: ')
+    logado = 0
+
+    for i in usuario:
+        if i['nome'] == nome and i['senha'] == senha:
+            logado = 1
+            tipo = i['tipo']
+
+    if logado == 0:
+        print('usuario nao encontrado!!!login invalido!!!')
+        return False
+    else:
+        print(f'login efetuado com sucesso!!Bem vindo {nome}!!')
+        return tipo

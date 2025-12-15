@@ -80,4 +80,3 @@ def menutabelas():
     print("f-Sair")
     opcao = input("Digite uma das opções para continuar: ")
     return opcao
-

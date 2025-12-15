@@ -1,4 +1,4 @@
-from dados import estoque, atendimentoP, produtos
+from dados import atendimentoP, produtos
 
 
 def verestoqueservicos():
@@ -77,4 +77,3 @@ def removerestoque():
             indice = int(input("Digite o indice do produto que você deseja remover: "))
 
         produtos.remove(produtos[indice])
-
